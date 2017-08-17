@@ -88,13 +88,15 @@ $('document').ready(function () {
 	}
 	
 	function pauseTime() {
-		if (isRunning == true) {
-			stopIt();
-			isRunning = false;
-			$('#stop').text('Reprendre');
-		} else {
-			timer = setInterval(function () { workTimer() }, 1000);
-			$('#stop').text('Pause');
+		if ((endTimeSeconds >= 1) || (endTimeMinutes >= 1)) {
+			if (isRunning == true) {
+				stopIt();
+				isRunning = false;
+				$('#stop').text('Reprendre');
+			} else {
+				timer = setInterval(function () { workTimer() }, 1000);
+				$('#stop').text('Mettre en pause');
+			}
 		}
 	}
 	
