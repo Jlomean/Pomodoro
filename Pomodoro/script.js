@@ -2,6 +2,8 @@ var endTimeMinutes = 0;
 var endTimeSeconds = 0;
 var timer;
 var endAlert;
+var step = 0;
+var steps = 0;
 
 $('document').ready(function () {
 	
@@ -17,7 +19,7 @@ $('document').ready(function () {
  		$('#hour').append(h, ' h ', m, ' m ', s, ' s.');
  	},1000);
  	
- 	function workTimer () { 		
+ 	function workTimer () {
  		if (endTimeSeconds < 10) {
  			var endTime = endTimeMinutes + ' m 0' + endTimeSeconds + ' s';
  		} else {
@@ -31,7 +33,7 @@ $('document').ready(function () {
  		}
  		$('#timer').append(endTime);
  		if (endTimeMinutes < 0) {
- 			stopIt();
+ 			end();
 			alert(endAlert);
  		} 		
  	};
@@ -40,27 +42,46 @@ $('document').ready(function () {
 		clearInterval(timer);
 	}
 	
+	function end() {
+		stopIt();
+		if (steps == 4) {
+			endAlert = "On respire !";
+			longBreakIt();
+			steps = 0;
+		} else {
+			if (step == 1) {
+				endAlert = "C'est la pause !";
+				shortBreakIt();
+			}
+			else if (step == 2) {
+				endAlert = "On reprend !";
+				workIt();
+			}
+		}
+	}
+	
 	function workIt() {
+		steps++;
+		step = 1;
 		stopIt();
 		endTimeMinutes = 25;
 		endTimeSeconds = 0;
-		endAlert = "C'est la pause !";
 		timer = setInterval(function () { workTimer() }, 1000);
 	}
 	
 	function shortBreakIt() {
+		step = 2;
 		stopIt();
 		endTimeMinutes = 5;
-		endTimeSeconds = 0;	
-		endAlert = "On reprend !";
+		endTimeSeconds = 0;
 		timer = setInterval(function () { workTimer() }, 1000);
 	}
 	
 	function longBreakIt() {
+		step = 2;
 		stopIt();
 		endTimeMinutes = 15;
-		endTimeSeconds = 0;	
-		endAlert = "On reprend !";
+		endTimeSeconds = 0;
 		timer = setInterval(function () { workTimer() }, 1000);
 	}
 	
