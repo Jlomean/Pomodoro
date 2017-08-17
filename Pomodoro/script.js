@@ -4,6 +4,7 @@ var timer;
 var endAlert;
 var step = 0;
 var steps = 0;
+var isRunning = false;
 
 $('document').ready(function () {
 	
@@ -20,6 +21,7 @@ $('document').ready(function () {
  	},1000);
  	
  	function workTimer () {
+ 		isRunning = true;
  		if (endTimeSeconds < 10) {
  			var endTime = endTimeMinutes + ' m 0' + endTimeSeconds + ' s';
  		} else {
@@ -85,8 +87,33 @@ $('document').ready(function () {
 		timer = setInterval(function () { workTimer() }, 1000);
 	}
 	
-	$('#stop').click(stopIt);
+	function pauseTime() {
+		if (isRunning == true) {
+			stopIt();
+			isRunning = false;
+			$('#stop').text('Reprendre');
+		} else {
+			timer = setInterval(function () { workTimer() }, 1000);
+			$('#stop').text('Pause');
+		}
+	}
+	
+	function reset() {		
+		stopIt();
+		endTimeMinutes = 0;
+		endTimeSeconds = 0;
+		step = 0;
+		steps = 0;
+		isRunning = false;
+		$('#timer').empty();
+		endTime = endTimeMinutes + ' m 0' + endTimeSeconds + ' s';
+ 		$('#timer').append(endTime);
+	}
+	
+	$('#stop').click(pauseTime);
 	$('#work').click(workIt);
 	$('#shortbreak').click(shortBreakIt);	
 	$('#longbreak').click(longBreakIt); 	
+	$('#reset').click(reset);
+	
  });
