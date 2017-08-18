@@ -1,5 +1,5 @@
-var endTimeMinutes = 0;
-var endTimeSeconds = 0;
+var endTimeMinutes;
+var endTimeSeconds;
 var timer;
 var endAlert;
 var step = 0;
@@ -107,6 +107,7 @@ $('document').ready(function () {
 		step = 0;
 		steps = 0;
 		isRunning = false;
+		$('#stop').text('Mettre en pause');
 		$('#timer').empty();
 		endTime = endTimeMinutes + ' m 0' + endTimeSeconds + ' s';
  		$('#timer').append(endTime);
