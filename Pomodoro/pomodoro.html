@@ -2,28 +2,34 @@
 <head>
 	<meta charset=utf-8 />
 	<title>Pomodoro timer</title>	
-	<script src="jquery-3.2.1.js"></script>
-	<script src="script.js"></script>
+	<script src="assets/script/jquery-3.2.1.js"></script>
+	<script src="assets/script/script.js"></script>
+	<link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.css">
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-	<h1>Pomodoro timer</h1>
-	
-	<div>
-		Nous sommes le <span id="day"></span>
+	<div class="container">
+		<h1>Pomodoro timer</h1>
+		
+		<div class="date">
+			<span class="fa fa-calendar fa-2x" alt="Date :"></span>&nbsp;<span id="day"></span>
+		</div>
+		
+		<div class="clock">
+			<div id="hours"></div>
+			<div id="min"></div>
+			<div id="sec"></div>
+		</div>
+		<br />
+		<div>
+			<p id="timer">00 m 00 s</p>
+			<button id="work">Travailler</button>
+			<button id="shortbreak">Courte pause</button>
+			<button id="longbreak">Longue pause</button>
+			<button id="stop">Mettre en pause</button>
+			<button id="reset">Remettre à 0</button>
+		</div>
 	</div>
-	
-	<div>
-		Il est <span id="hour"></span>
-	</div>
-	<br />
-	<div>
-		<p id="timer">00 m 00 s</p>
-		<button id="work">Travailler</button>
-		<button id="shortbreak">Courte pause</button>
-		<button id="longbreak">Longue pause</button>
-		<button id="stop">Mettre en pause</button>
-		<button id="reset">Remettre à 0</button>
-	</div>
-	
 </body>
