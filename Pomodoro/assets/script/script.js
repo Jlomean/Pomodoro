@@ -8,26 +8,24 @@ var isRunning = false;
 
 $('document').ready(function () {
 	
-	$(function clock() {
-		setInterval(function() {
-			var d = new Date();
-			var date = d.toLocaleDateString();
-			$('#day').empty();
-			$('#day').append(date, '.');
-			var h = d.getHours();
-			var m = d.getMinutes();
-			var s = d.getSeconds();
-			var hourDeg = h * 30 + (m / 2) - 180;
-			var hourRun = "rotate(" + hourDeg + "deg)";
-			$("#hours").css({ "transform": hourRun});
-			var minDeg = m * 6 - 180;
-			var minRun = "rotate(" + minDeg + "deg)";
-			$("#min").css({ "transform" : minRun });
-			var secDeg = s * 6 - 180;
-			var secRun = "rotate(" + secDeg + "deg)";
-			$("#sec").css({ "transform": secRun });
-		}, 1000);
-});
+	setInterval(function clock() {
+		var d = new Date();
+		var date = d.toLocaleDateString();
+		$('#day').empty();
+		$('#day').append(date, '.');
+		var h = d.getHours();
+		var m = d.getMinutes();
+		var s = d.getSeconds();
+		var hourDeg = h * 30 + (m / 2) - 180;
+		var hourRun = "rotate(" + hourDeg + "deg)";
+		$("#hours").css({ "transform": hourRun});
+		var minDeg = m * 6 - 180;
+		var minRun = "rotate(" + minDeg + "deg)";
+		$("#min").css({ "transform" : minRun });
+		var secDeg = s * 6 - 180;
+		var secRun = "rotate(" + secDeg + "deg)";
+		$("#sec").css({ "transform": secRun });
+	}, 1000);
  	
  	function workTimer () {
  		isRunning = true;
