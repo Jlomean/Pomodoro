@@ -115,7 +115,7 @@ h1 {
 button {
 	background-color: darkgreen;
 	color: whitesmoke;
-	padding: 0.7em 3em;
+	padding: 0.7em 0;
 	min-width: 15%;
 	text-transform: uppercase;
 	font-weight: bolder;
