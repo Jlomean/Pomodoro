@@ -100,6 +100,7 @@ h1 {
 
 #timer {
 	font-weight: bold;
+	font-size: 2em;
 	padding-left:1em;
 	transition: color .5s;
 }
@@ -115,7 +116,6 @@ button {
 	background-color: darkgreen;
 	color: whitesmoke;
 	padding: 0.7em 3em;
-	border-radius: 50%;
 	min-width: 15%;
 	text-transform: uppercase;
 	font-weight: bolder;
