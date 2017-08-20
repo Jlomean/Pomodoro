@@ -107,11 +107,11 @@ $(function () {
 			if (isRunning == true) {
 				stopIt();
 				isRunning = false;
-				$('#stop').text('Reprendre');
+				$('#stop').text('Reprendre (espace)');
 				$('#timer').css({"color": "black"});
 			} else {
 				timer = setInterval(function () { workTimer() }, 1000);
-				$('#stop').text('Mettre en pause');
+				$('#stop').text('Pause (espace)');
 				$('#timer').css({"color": "green"});
 			}
 		}
@@ -124,7 +124,7 @@ $(function () {
 		step = 0;
 		steps = 0;
 		isRunning = false;
-		$('#stop').text('Mettre en pause');
+		$('#stop').text('Pause (espace)');
 		$('#timer').empty();
 		endTime =  "Temps restant <br/><br/> " + endTimeMinutes + ' m 0' + endTimeSeconds + ' s';
  		$('#timer').html(endTime);
