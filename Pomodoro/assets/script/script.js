@@ -8,6 +8,12 @@ var isRunning = false;
 
 $(function () {
 	
+	$('body').bind('keypress', function(e) {
+		if (e.which == 32){
+			pauseTime();
+		}
+	});
+	
 	setInterval(function clock() {
 		var d = new Date();
 		var date = d.toLocaleDateString();
