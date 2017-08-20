@@ -6,13 +6,13 @@ var step = 0;
 var steps = 0;
 var isRunning = false;
 
-$('document').ready(function () {
+$(function () {
 	
 	setInterval(function clock() {
 		var d = new Date();
 		var date = d.toLocaleDateString();
 		$('#day').empty();
-		$('#day').append(date, '.');
+		$('#day').append(date);
 		var h = d.getHours();
 		var m = d.getMinutes();
 		var s = d.getSeconds();
@@ -30,9 +30,9 @@ $('document').ready(function () {
  	function workTimer () {
  		isRunning = true;
  		if (endTimeSeconds < 10) {
- 			var endTime = endTimeMinutes + ' m 0' + endTimeSeconds + ' s';
+ 			var endTime = "Temps restant <br/><br/> " + endTimeMinutes + ' m 0' + endTimeSeconds + ' s';
  		} else {
- 			var endTime = endTimeMinutes + ' m ' + endTimeSeconds + ' s';
+ 			var endTime = "Temps restant <br/><br/> " + endTimeMinutes + ' m ' + endTimeSeconds + ' s';
  		} 		
  		$('#timer').empty();
  		endTimeSeconds--;
@@ -116,7 +116,7 @@ $('document').ready(function () {
 		isRunning = false;
 		$('#stop').text('Mettre en pause');
 		$('#timer').empty();
-		endTime = endTimeMinutes + ' m 0' + endTimeSeconds + ' s';
+		endTime =  "Temps restant <br/><br/> " + endTimeMinutes + ' m 0' + endTimeSeconds + ' s';
  		$('#timer').append(endTime);
 	}
 	
