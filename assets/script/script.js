@@ -5,6 +5,7 @@ var endAlert;
 var step = 0;
 var steps = 0;
 var isRunning = false;
+var notifySound = new Audio('assets/sounds/job-done.mp3');
 
 $(function () {
 	
@@ -57,6 +58,7 @@ $(function () {
 	}
 	
 	function end() {
+		notifySound.play();
 		stopIt();
 		if (steps == 4) {
 			endAlert = "On respire !";
