@@ -101,6 +101,7 @@ h1 {
 #timer {
 	font-weight: bold;
 	padding-left:1em;
+	transition: color .5s;
 }
 
 .buttons {

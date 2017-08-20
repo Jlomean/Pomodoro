@@ -33,18 +33,17 @@ $(function () {
  			var endTime = "Temps restant <br/><br/> " + endTimeMinutes + ' m 0' + endTimeSeconds + ' s';
  		} else {
  			var endTime = "Temps restant <br/><br/> " + endTimeMinutes + ' m ' + endTimeSeconds + ' s';
- 		} 		
- 		$('#timer').empty();
+ 		}
  		endTimeSeconds--;
  		if (endTimeSeconds < 0) {
  			endTimeMinutes--;
  			endTimeSeconds += 60;
  		}
- 		$('#timer').append(endTime);
+ 		$('#timer').html(endTime);
  		if (endTimeMinutes < 0) {
  			end();
 			alert(endAlert);
- 		} 		
+ 		}
  	};
  	
  	function stopIt() {
@@ -75,6 +74,7 @@ $(function () {
 		stopIt();
 		endTimeMinutes = 25;
 		endTimeSeconds = 0;
+		$('#timer').css({"color": "green"});
 		timer = setInterval(function () { workTimer() }, 1000);
 	}
 	
@@ -83,6 +83,7 @@ $(function () {
 		stopIt();
 		endTimeMinutes = 5;
 		endTimeSeconds = 0;
+		$('#timer').css({"color": "green"});
 		timer = setInterval(function () { workTimer() }, 1000);
 	}
 	
@@ -91,6 +92,7 @@ $(function () {
 		stopIt();
 		endTimeMinutes = 15;
 		endTimeSeconds = 0;
+		$('#timer').css({"color": "green"});
 		timer = setInterval(function () { workTimer() }, 1000);
 	}
 	
@@ -100,9 +102,11 @@ $(function () {
 				stopIt();
 				isRunning = false;
 				$('#stop').text('Reprendre');
+				$('#timer').css({"color": "black"});
 			} else {
 				timer = setInterval(function () { workTimer() }, 1000);
 				$('#stop').text('Mettre en pause');
+				$('#timer').css({"color": "green"});
 			}
 		}
 	}
@@ -117,11 +121,12 @@ $(function () {
 		$('#stop').text('Mettre en pause');
 		$('#timer').empty();
 		endTime =  "Temps restant <br/><br/> " + endTimeMinutes + ' m 0' + endTimeSeconds + ' s';
- 		$('#timer').append(endTime);
+ 		$('#timer').html(endTime);
+		$('#timer').css({"color": "black"});
 	}
 	
 	$('#stop').click(pauseTime);
-	$('#work').click(workIt);
+	$('#work, .images').click(workIt);
 	$('#shortbreak').click(shortBreakIt);	
 	$('#longbreak').click(longBreakIt); 	
 	$('#reset').click(reset);
