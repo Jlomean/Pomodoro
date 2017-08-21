@@ -6,6 +6,8 @@ var step = 0;
 var steps = 0;
 var isRunning = false;
 var notifySound = new Audio('assets/sounds/job-done.wav');
+var week = ['dim','lun','mar','mer','jeu','ven','sam'];
+var year = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
 
 $(function () {
 	
@@ -17,9 +19,12 @@ $(function () {
 	
 	setInterval(function clock() {
 		var d = new Date();
-		var date = d.toLocaleDateString();
-		$('#day').empty();
-		$('#day').append(date);
+		var wD = week[d.getDay()];
+		var nD = d.getDate();
+		var mo = year[d.getMonth()];
+		$('#day').html(wD);
+		$('#daynum').html(nD);
+		$('#month').html(mo);
 		var h = d.getHours();
 		var m = d.getMinutes();
 		var s = d.getSeconds();
