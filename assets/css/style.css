@@ -14,20 +14,21 @@ h1, h2 {
 	font-weight: bolder;
 	margin: 1em 0;
 	letter-spacing: 3px;
-	color: darkgreen;
+	color: darkred;
 }
 
 .header {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	border-bottom: 1em solid darkgreen;
-	padding: 1em 0;
+	border-bottom: 0.5em solid darkgreen;
+	padding: 1.5em 0;
 	align-items: center;
+	margin-bottom: 0.7em;
 }
 
 .date {
-	border: 2px black solid;
+	border: 2px darkgreen solid;
 	padding: 0 1em;
 	text-transform: uppercase;
 	line-height: 0.2;
@@ -54,7 +55,6 @@ h1, h2 {
 	border-radius: 100%;
 	padding: 50px;
 	text-align: center;
-	background-color: white;
 }
 
 #hours {
@@ -95,6 +95,7 @@ h1, h2 {
 .explain {
 	text-align: justify;
 	border-right: 1px dotted darkgreen;
+	padding-right: 2em;
 }
 
 .timing {
@@ -102,6 +103,7 @@ h1, h2 {
 	align-items: center;
 	justify-content: center;
 	margin: auto;
+	padding-left: 2em;
 }
 
 .images {
@@ -122,15 +124,16 @@ h1, h2 {
 #timer {
 	font-weight: bold;
 	font-size: 2em;
-	padding-left:1em;
+	padding-left:0.2em;
 	transition: color .5s;
 }
 
 .buttons {
 	display: flex;
 	justify-content: space-between;
-	padding: 1em;
-	border-top: 1em solid darkgreen;
+	padding: 1.5em;
+	margin-top: 0.7em;
+	border-top: 0.5em solid darkgreen;
 }
 
 button {
