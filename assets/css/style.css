@@ -27,7 +27,7 @@ h1, h2 {
 }
 
 .date {
-	border: 3px black solid;
+	border: 2px black solid;
 	padding: 0 1em;
 	text-transform: uppercase;
 	line-height: 0.2;
