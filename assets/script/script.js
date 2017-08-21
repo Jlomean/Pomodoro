@@ -46,7 +46,8 @@ $(function () {
  			endTimeMinutes--;
  			endTimeSeconds += 60;
  		}
- 		$('#timer, title').html(endTime);
+ 		$('#timer').html(endTime);
+		$('title').html(endTimeMinutes + ' m ' + endTimeSeconds + ' s');
  		if (endTimeMinutes < 0) {
  			end();
 			alert(endAlert);
