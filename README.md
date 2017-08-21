@@ -30,4 +30,3 @@ a simple pomodoro clock using JQuery
 * Mettre en place un bouton "Activer les sons" et rendre le Pomodoro muet de base
 * Trouver comment activer les notifications
 * Mettre en place des jauges pour le timer
-* Modifier les images selon la phase en cours (travail, pause courte, pause longue)
