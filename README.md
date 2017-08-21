@@ -15,8 +15,18 @@ a simple pomodoro clock using JQuery
 * Tous les 4 sprints, faire une pause plus longue de 15 mn
 * Assigner la barre espace à la pause/reprise du timer
 * Jouer un son d'alarme pour la fin/reprise du sprint
-* Le timer n'est pas encore plus visuel, mais il y a une horloge en haut à droite
 
 ## Bonus échoué jusqu'ici
 
 * Activer les notifications du navigateur
+
+## Bonus persos
+
+* Afficher le timer dans le titre de l'onglet, pour le confort utilisateur
+* Afficher l'heure locale sur une horloge dans le header
+
+## ToDo
+
+* Mettre en place un bouton "Activer les sons" et rendre le Pomodoro muet de base
+* Trouver comment activer les notifications
+* Mettre en place des jauges pour le timer
