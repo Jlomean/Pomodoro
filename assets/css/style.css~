@@ -97,7 +97,7 @@ h1 {
 	background-image: url("../img/tomatime.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: cover;
+	background-size: 15em;
 	transition: background-image 1s;
 }
 
