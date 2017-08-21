@@ -46,7 +46,7 @@ $(function () {
  			endTimeMinutes--;
  			endTimeSeconds += 60;
  		}
- 		$('#timer').html(endTime);
+ 		$('#timer, title').html(endTime);
  		if (endTimeMinutes < 0) {
  			end();
 			alert(endAlert);
@@ -130,6 +130,7 @@ $(function () {
 		$('#timer').empty();
 		endTime =  "Temps restant <br/><br/> " + endTimeMinutes + ' m 0' + endTimeSeconds + ' s';
  		$('#timer').html(endTime);
+		$('title').html("Pomodoro timer");
 		$('#timer').css({"color": "black"});
 	}
 	
