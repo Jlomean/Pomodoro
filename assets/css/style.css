@@ -96,7 +96,7 @@ h1, h2 {
 	padding: 1em;
 }
 
-.explain {
+.explain, .tasks {
 	text-align: justify;
 	border-right: 1px dotted darkgreen;
 	padding-right: 2em;
@@ -120,6 +120,14 @@ h1, h2 {
 	background-color: black;
 	color: whitesmoke;
 	transition: .5s;
+}
+
+.tasklist {
+	min-height: 3em;
+	background-color: lightgoldenrodyellow;
+	border: 1px outset black;
+	margin-top: 1em;
+	padding: 0.5em;
 }
 
 #wiki {

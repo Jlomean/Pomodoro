@@ -148,6 +148,10 @@ $(function () {
 			}
 		}
 	}
+
+	function newTask() {
+		$('.tasklist').toggle(500);
+	}
 	
 	function reset() {		
 		stopIt();
@@ -170,5 +174,11 @@ $(function () {
 	$('#shortbreak').click(shortBreakIt);	
 	$('#longbreak').click(longBreakIt); 	
 	$('#reset').click(reset);
+	$('.close').click(function() {
+		$('.explain').toggle(500, function() {
+			$('.tasks').toggle(500);
+		});
+	});
+	$('#newtask').click(newTask);
 	
  });
