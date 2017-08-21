@@ -1,14 +1,15 @@
 body {
 	font-family: sans-serif;
-	background-color: darkgreen;
+	background-color: whitesmoke;
 }
 
 .container {
 	background-color: whitesmoke;
 	text-align: center;
+	align-items: center;
 }
 
-h1 {
+h1, h2 {
 	text-transform: uppercase;
 	font-weight: bolder;
 	margin: 1em 0;
@@ -21,7 +22,6 @@ h1 {
 	flex-direction: row;
 	justify-content: space-between;
 	border-bottom: 1em solid darkgreen;
-	border-top: 1em solid darkgreen;
 	padding: 1em 0;
 	align-items: center;
 }
@@ -73,13 +73,12 @@ h1 {
 	justify-content: center;
 	margin: -1em auto auto auto;
 	padding: 1em;
-	min-height: 30em;
+	min-height: 80%;
 }
 
 .explain {
 	text-align: justify;
 	border-right: 1px dotted darkgreen;
-	padding: 10em 3em;
 }
 
 .timing {
@@ -97,7 +96,7 @@ h1 {
 	background-image: url("../img/tomatime.jpg");
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 15em;
+	background-size: cover;
 	transition: background-image 1s;
 }
 
@@ -123,4 +122,8 @@ button {
 	text-transform: uppercase;
 	font-weight: bolder;
 	letter-spacing: 0.07em;
+}
+
+button:hover {
+	background-color: green;
 }
