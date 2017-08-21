@@ -1,6 +1,10 @@
 body {
 	font-family: sans-serif;
 	background-color: whitesmoke;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 
 .container {
@@ -96,6 +100,38 @@ h1, h2 {
 	text-align: justify;
 	border-right: 1px dotted darkgreen;
 	padding-right: 2em;
+}
+
+.mainbutton {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.mainbutton div {
+	background-color: whitesmoke;
+	color: black;
+	border-radius: 0.7em;
+	padding: 0.2em 0.7em;
+	transition: .5s;
+	border: solid 1px black;
+}
+.mainbutton div:hover {
+	background-color: black;
+	color: whitesmoke;
+	transition: .5s;
+}
+
+#wiki {
+	transition: .5s;
+}
+
+#wiki:hover {
+	transition: .5s;
+}
+
+a {
+	text-decoration: none;
 }
 
 .timing {

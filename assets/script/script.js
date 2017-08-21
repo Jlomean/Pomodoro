@@ -1,7 +1,7 @@
 var endTimeMinutes;
 var endTimeSeconds;
 var timer;
-var endAlert;
+var endAlert = "C'est parti !";
 var step = 0;
 var steps = 0;
 var isRunning = false;
@@ -11,10 +11,29 @@ var year = ['janvier','février','mars','avril','mai','juin','juillet','août','
 
 $(function () {
 	
+	function notifyMe() {
+		Push.create("Pomodoro Timer", {
+			body: endAlert,
+			icon: 'assets/img/timericon.png',
+			timeout: 4000,
+			onClick: function() {
+				window.focus();
+				this.close();
+			}
+		});
+	}
+	
 	$('body').bind('keypress', function(e) {
 		if (e.which == 32){
 			pauseTime();
 		}
+	});
+	
+	$('#wiki').hover(function() {
+		$(this).html('<span class="fa fa-wikipedia-w"></span> Pour aller plus loin');
+	},
+		function () {
+			$(this).html($('<span class="fa fa-wikipedia-w"></span>'));
 	});
 	
 	setInterval(function clock() {
@@ -55,7 +74,6 @@ $(function () {
 		$('title').html(endTimeMinutes + ' m ' + endTimeSeconds + ' s');
  		if (endTimeMinutes < 0) {
  			end();
-			alert(endAlert);
  		}
  	};
  	
@@ -83,6 +101,7 @@ $(function () {
 	}
 	
 	function workIt() {
+		notifyMe();
 		steps++;
 		step = 1;
 		stopIt();
@@ -94,6 +113,7 @@ $(function () {
 	}
 	
 	function shortBreakIt() {
+		notifyMe();
 		step = 2;
 		stopIt();
 		endTimeMinutes = 5;
@@ -104,6 +124,7 @@ $(function () {
 	}
 	
 	function longBreakIt() {
+		notifyMe();
 		step = 2;
 		stopIt();
 		endTimeMinutes = 15;
