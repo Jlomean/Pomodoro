@@ -8,6 +8,7 @@ var isRunning = false;
 var notifySound = new Audio('assets/sounds/job-done.wav');
 var week = ['dim','lun','mar','mer','jeu','ven','sam'];
 var year = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+var taskList = ['Mettre en place un bouton "Activer les sons" et rendre le Pomodoro muet de base', 'Mettre en place des jauges pour le timer', 'Mettre en place le formulaire pour la liste de tâches'];
 
 $(function () {
 	
@@ -150,7 +151,7 @@ $(function () {
 	}
 
 	function newTask() {
-		$('.tasklist').toggle(500);
+		/* Créer ici le formulaire d'ajout de tâche et son entrée dans taskList[] */
 	}
 	
 	function reset() {		
@@ -177,6 +178,10 @@ $(function () {
 	$('.close').click(function() {
 		$('.explain').toggle(500, function() {
 			$('.tasks').toggle(500);
+			$('.tasklist ul').html('<li>' + taskList.join('</li> <li>') + '</li>' );
+			if (taskList.length > 0) {
+				$('.tasklist').toggle(500);
+			}
 		});
 	});
 	$('#newtask').click(newTask);
