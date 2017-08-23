@@ -196,6 +196,9 @@ a {
 		width: 0%;
 		background-color: red;
 	}
+	25% {
+		background-color: yellow;
+	}
 	50% {
 		background-color: #4CAF50;
 	}
@@ -212,6 +215,9 @@ a {
 	}
 	50% {
 		background-color: #4CAF50;
+	}
+	75% {
+		background-color: yellow;
 	}
 	100% {
 		width: 0%;
