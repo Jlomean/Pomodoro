@@ -8,7 +8,7 @@ var isRunning = false;
 var notifySound = new Audio('assets/sounds/job-done.wav');
 var week = ['dim','lun','mar','mer','jeu','ven','sam'];
 var year = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
-var taskList = ['Mettre en place un bouton "Activer les sons" et rendre le Pomodoro muet de base', 'Mettre en place des jauges pour le timer', 'Mettre en place le formulaire pour la liste de tâches'];
+var taskList = ['Mettre en place un bouton "Activer les sons" et rendre le Pomodoro muet de base', 'Mettre en place le formulaire pour la liste de tâches'];
 
 $(function () {
 	
@@ -101,6 +101,10 @@ $(function () {
 		}
 	}
 	
+	function animate() {
+ 		$('.load, .unload').css({"animation-duration": (endTimeMinutes*60 + endTimeSeconds) + 's' });
+	}
+	
 	function workIt() {
 		notifyMe();
 		steps++;
@@ -110,6 +114,8 @@ $(function () {
 		endTimeSeconds = 0;
 		$('#timer').css({"color": "green"});
 		$('.images').css({'background-image': 'url("assets/img/working.jpg")'});
+		$('#progressbar').removeClass('load').addClass('unload');
+		animate();
 		timer = setInterval(function () { workTimer() }, 1000);
 	}
 	
@@ -121,6 +127,8 @@ $(function () {
 		endTimeSeconds = 0;
 		$('#timer').css({"color": "green"});
 		$('.images').css({'background-image': 'url("assets/img/shortbreak.jpg")'});
+		$('#progressbar').removeClass('unload').addClass('load');
+		animate();
 		timer = setInterval(function () { workTimer() }, 1000);
 	}
 	
@@ -131,7 +139,9 @@ $(function () {
 		endTimeMinutes = 15;
 		endTimeSeconds = 0;
 		$('#timer').css({"color": "green"});
+		$('#progressbar').removeClass('unload').addClass('load');
 		$('.images').css({'background-image': 'url("assets/img/longbreak.jpg")'});
+		animate();
 		timer = setInterval(function () { workTimer() }, 1000);
 	}
 	
