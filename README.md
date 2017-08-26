@@ -16,6 +16,8 @@ a simple pomodoro clock using JQuery
 * Assigner la barre espace à la pause/reprise du timer
 * Jouer un son d'alarme pour la fin/reprise du sprint
 * Activer les notifications du navigateur
+* Mettre en place des jauges pour le timer
+* Mettre en place le formulaire pour la liste de tâches
 
 ## Bonus persos
 
@@ -26,5 +28,5 @@ a simple pomodoro clock using JQuery
 ## ToDo
 
 * Mettre en place un bouton "Activer les sons" et rendre le Pomodoro muet de base
-* Mettre en place des jauges pour le timer
-* Mettre en place le formulaire pour la liste de tâches
+* Mettre en place l'historique des tâches terminées
+* Donner la possibilité de modifier le temps des périodes de travail et pause
