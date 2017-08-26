@@ -45,10 +45,20 @@
 			<div class="col-md-6 tasks" style="display: none;">
 				<h2>Tâches à accomplir</h2>
 				<div class="mainbutton">
-					<div id="newtask">Nouvelle tâche</div>
+					<div id="newtask">Nouvelle tâche (Entrée)</div>
 					<div id="history">Tâches terminées</div>
 				</div>
-				<div class="tasklist">
+				<form class="tasklist" id="newone">
+					<input type="text" class="entry"></input>
+					<div class="mainbutton">
+						<div id="push">Envoyer (Entrée)</div>
+					</div>
+				</form>
+				<div class="tasklist" id="running">
+					<ul>
+					</ul>
+				</div>
+				<div class="tasklist" id="done">
 					<ul>
 					</ul>
 				</div>

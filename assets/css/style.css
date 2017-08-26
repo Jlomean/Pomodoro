@@ -131,6 +131,11 @@ h1, h2 {
 	display: none;
 }
 
+.entry {
+	width: 99%;
+	margin-bottom: 0.5em;
+}
+
 #wiki {
 	transition: .5s;
 }
