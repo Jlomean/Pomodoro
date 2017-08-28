@@ -67,7 +67,7 @@ h1, h2 {
 	width: 4px;
 	height: 25px;
 	margin: auto;
-	transform-origin: left top;
+	transform-origin: center top;
 }
 
 #min {
@@ -76,7 +76,7 @@ h1, h2 {
 	width: 2px;
 	height: 40px;
 	margin: auto;
-	transform-origin: left top;
+	transform-origin: center top;
 }
 
 #sec {
@@ -85,7 +85,7 @@ h1, h2 {
 	width: 1px;
 	height: 45px;
 	margin: auto;
-	transform-origin: left top;
+	transform-origin: center top;
 }
 
 .pomodoro {
